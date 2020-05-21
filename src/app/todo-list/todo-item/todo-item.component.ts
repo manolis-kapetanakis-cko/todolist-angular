@@ -7,21 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-item.component.css']
 })
 export class TodoItemComponent implements OnInit {
-  itemsList: { description: string }[] = []
-
-  constructor(private todolistService: TodoListService) {
-    todolistService.onInitialiseList()
-  }
+  constructor(private todolistService: TodoListService) { }
 
   ngOnInit(): void {
-    this.itemsList = this.todolistService.itemsList
   }
 
   onAddItem(description: string) {
     this.todolistService.addItemToList(description)
   }
 
-  onRemoveItem(i: number) {
-    this.todolistService.removeItemToList(i)
-  }
 }

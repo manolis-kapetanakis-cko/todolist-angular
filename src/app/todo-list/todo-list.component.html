@@ -1,5 +1,21 @@
 <div class="row">
+  <!-- New Item -->
   <div class="col-xs-10">
     <app-todo-item></app-todo-item>
+  </div>
+  <!-- LIST: -->
+  <div class="col-sm">
+    <div class="col-xs-10">
+      <ul class="list-group">
+        <a class="list-group-item"
+          *ngFor="let item of itemsList; let i=index">
+          {{ item.description }}
+          <button
+            class="btn btn-outline-danger remove-item btn-sm"
+            (click)="onRemoveItem(i)">x</button>
+        </a>
+
+      </ul>
+    </div>
   </div>
 </div>
